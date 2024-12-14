@@ -2,22 +2,27 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float speed = 20f;
+    public Rigidbody rb;
+
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        rb.velocity = transform.forward * speed;
+        gameManager = FindObjectOfType<GameManager>();  // Encuentra GameManager
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Eliminar al enemigo
-            Destroy(collision.gameObject);
-
-            // Incrementar el contador de enemigos eliminados
-            GameManager.enemiesDestroyed++;
-
-            // Actualizar la UI
-            FindObjectOfType<GameManager>().UpdateEnemiesCount();
-
-            // Destruir la bala
-            Destroy(gameObject);
+            // Destruye al enemigo solo una vez
+            Destroy(collision.gameObject);  // Destruye el enemigo
+            gameManager.EnemyDestroyed();  // Actualiza el conteo
         }
+
+        // Destruye la bala
+        Destroy(gameObject);
     }
 }
-

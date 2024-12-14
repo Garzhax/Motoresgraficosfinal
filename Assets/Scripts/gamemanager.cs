@@ -3,52 +3,48 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Contador de enemigos eliminados
-    public static int enemiesDestroyed = 0;
+    public int totalEnemies;  // Número total de enemigos en la escena
+    public Text enemiesRemainingText;  // Texto que muestra los enemigos restantes
+    public GameObject winCanvas;  // Canvas de victoria
 
-    // Número total de enemigos en la escena
-    private int totalEnemies;
+    private int enemiesRemaining;
 
-    // Referencia al Canvas del mensaje "You Win"
-    public GameObject youWinCanvas;
-
-    // Referencia al Text que muestra el conteo
-    public Text enemiesCountText;
-
-    private void Start()
+    void Start()
     {
-        // Encontrar cuántos enemigos hay en la escena al inicio
-        totalEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-
-        // Inicializar el conteo en la UI
-        UpdateEnemiesCount();
-
-        // Asegurarse de que el Canvas de "You Win" esté desactivado al inicio
-        youWinCanvas.SetActive(false);
+        enemiesRemaining = totalEnemies;  // Inicializa el conteo de enemigos
+        UpdateEnemiesRemainingText();  // Muestra la cantidad inicial
     }
 
-    private void Update()
+    // Este método se llama cada vez que un enemigo es destruido
+    public void EnemyDestroyed()
     {
-        // Si todos los enemigos han sido eliminados, mostrar el mensaje de "You Win"
-        if (enemiesDestroyed >= totalEnemies && totalEnemies > 0)
+        if (enemiesRemaining <= 0) return;  // Si ya no hay enemigos, no hace nada
+
+        enemiesRemaining--;  // Resta un enemigo
+        Debug.Log("Enemigos restantes: " + enemiesRemaining);  // Muestra la cantidad restante
+        UpdateEnemiesRemainingText();  // Actualiza el texto del UI
+
+        if (enemiesRemaining <= 0)
         {
-            ShowYouWin();
+            ShowWinScreen();  // Muestra el cartel de victoria si no hay más enemigos
         }
     }
 
-    public void UpdateEnemiesCount()
+    // Actualiza el texto de "Enemigos restantes"
+    private void UpdateEnemiesRemainingText()
     {
-        // Actualizar el texto con el conteo de enemigos
-        enemiesCountText.text = $"Enemies Destroyed: {enemiesDestroyed}/{totalEnemies}";
+        if (enemiesRemainingText != null)
+        {
+            enemiesRemainingText.text = "Enemigos restantes: " + enemiesRemaining;
+        }
     }
 
-    private void ShowYouWin()
+    // Muestra el cartel de victoria
+    private void ShowWinScreen()
     {
-        // Mostrar el Canvas de "You Win"
-        youWinCanvas.SetActive(true);
-
-        // Opcional: Pausar el juego
-        Time.timeScale = 0f; // Pausa el juego
+        if (winCanvas != null)
+        {
+            winCanvas.SetActive(true);  // Activa el canvas de victoria
+        }
     }
 }
-
