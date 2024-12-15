@@ -296,7 +296,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885866222}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -578,7 +578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &462408346
 RectTransform:
   m_ObjectHideFlags: 0
@@ -982,27 +982,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885866223}
-  - component: {fileID: 885866222}
   m_Layer: 0
   m_Name: 'GameOverManager '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &885866222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885866221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ea50420e26d5a49a8f79abcf424caa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 462408345}
+  m_IsActive: 0
 --- !u!4 &885866223
 Transform:
   m_ObjectHideFlags: 0
@@ -1015,8 +1001,7 @@ Transform:
   m_LocalPosition: {x: 1.9219127, y: 0.6873527, z: -0.61514056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1494814571}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
@@ -1460,6 +1445,7 @@ GameObject:
   - component: {fileID: 1494814574}
   - component: {fileID: 1494814573}
   - component: {fileID: 1494814572}
+  - component: {fileID: 1494814575}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1480,7 +1466,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 462408346}
-  m_Father: {fileID: 885866223}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1550,6 +1536,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1494814575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494814570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ea50420e26d5a49a8f79abcf424caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 462408345}
 --- !u!1 &1571438402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,7 +2136,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885866222}
+      - m_Target: {fileID: 1494814575}
         m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
         m_MethodName: RetryGame
         m_Mode: 1
@@ -8876,3 +8875,4 @@ SceneRoots:
   - {fileID: 1006453320}
   - {fileID: 1671195574}
   - {fileID: 885866223}
+  - {fileID: 1494814571}
