@@ -2,21 +2,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Variable opcional para propiedades del enemigo (ejemplo: vida)
-    public int health = 1;
-
-    // Método para recibir daño (por si lo necesitas)
-    public void TakeDamage(int damage)
+    private void OnTriggerEnter(Collider other) // Usamos OnTriggerEnter aquí
     {
-        health -= damage;
-        if (health <= 0)
+        if (other.CompareTag("Bullet"))
         {
-            Destroy(gameObject);
+            // Destruye el enemigo solo si la bala lo toca
+            Destroy(gameObject);  // Destruye el enemigo
         }
     }
-
-    private void OnDestroy()
-    {
-        // Este método queda vacío porque el conteo se maneja en el script Bullet
-    }
 }
+

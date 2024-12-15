@@ -13,16 +13,16 @@ public class Bullet : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();  // Encuentra GameManager
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other) // Usamos OnTriggerEnter aquí
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            // Actualiza el conteo y destruye el enemigo
-            gameManager.EnemyDestroyed();
-            Destroy(collision.gameObject);
+            // Destruye al enemigo solo una vez
+            Destroy(other.gameObject);  // Destruye el enemigo
+            gameManager.EnemyDestroyed();  // Actualiza el conteo
         }
 
-        // Destruye la bala
+        // Destruye la bala al colisionar con cualquier cosa
         Destroy(gameObject);
     }
 }
