@@ -2,14 +2,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
-
-    public void retry()
 {
-    SceneManager.LoadScene(SceneManager.getactiveScene().buildIndex);
-}
+    // Método para reiniciar el juego
+    public void Retry()
+    {
+        // Carga la escena actual
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
-public void exit
-{
-    UnityEditor.EditorApplication.isPlaying= false;
-    Application.quit;
+    // Método para salir del juego
+    public void Exit()
+    {
+        // Si estás en el editor de Unity, detiene la reproducción
+            UnityEditor.EditorApplication.isPlaying = false;
+
+        // Si está en una compilación final, cierra la aplicación
+        Application.Quit();
+    }
 }
