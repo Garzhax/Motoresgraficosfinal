@@ -3,20 +3,28 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    // Método para reiniciar el juego
-    public void Retry()
+    public GameObject gameOverPanel; // Referencia al panel de Game Over
+
+    void Start()
     {
-        // Carga la escena actual
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverPanel.SetActive(false); // Asegúrate de que el panel esté desactivado al inicio
     }
 
-    // Método para salir del juego
-    public void Exit()
+    public void ShowGameOverScreen()
     {
-        // Si estás en el editor de Unity, detiene la reproducción
-            UnityEditor.EditorApplication.isPlaying = false;
+        gameOverPanel.SetActive(true); // Muestra el panel de Game Over
+    }
 
-        // Si está en una compilación final, cierra la aplicación
-        Application.Quit();
+    public void RetryGame()
+    {
+        // Carga la escena del menú inicial
+        SceneManager.LoadScene("MenuInicial"); // Cambia "MenuInicial" por el nombre exacto de tu escena
+    }
+
+    public void ExitGame()
+    {
+        // Muestra un mensaje de depuración al salir
+        Debug.Log("Botón de salir presionado.");
+        Application.Quit(); // Cierra la aplicación
     }
 }

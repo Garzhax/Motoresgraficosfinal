@@ -2,13 +2,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameOverManager gameOverManager; // Referencia a GameOverManager
+    private GameOverManager gameOverManager;  // Referencia al GameOverManager
 
-    void OnCollisionEnter(Collision collision)
+    void Start()
     {
-        if (collision.gameObject.CompareTag("Enemy")) // Si colisiona con un enemigo
+        gameOverManager = FindObjectOfType<GameOverManager>();  // Encuentra el GameOverManager
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
         {
-            gameOverManager.ShowGameOverScreen(); // Muestra la pantalla de Game Over
+            // Mostrar el Game Over cuando el jugador colisione con el enemigo
+            gameOverManager.ShowGameOverScreen();
         }
     }
 }
