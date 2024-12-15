@@ -41,6 +41,7 @@ public class GameOverManager : MonoBehaviour
 
     public void RetryGame()
     {
+        Debug.Log("Intentando reiniciar el juego...");  // Mensaje de depuración
         Time.timeScale = 1f; // Reactiva el tiempo
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Vuelve a cargar la escena
 
@@ -49,10 +50,13 @@ public class GameOverManager : MonoBehaviour
         {
             script.enabled = true;
         }
+
+        Debug.Log("Juego reiniciado.");  // Mensaje de depuración
     }
 
     public void ExitGame()
     {
+        Debug.Log("Saliendo del juego...");  // Mensaje de depuración
         Application.Quit(); // Cierra la aplicación
     }
 }
