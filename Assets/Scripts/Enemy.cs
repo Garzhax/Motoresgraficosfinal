@@ -2,18 +2,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private bool isDestroyed = false;  // Evita que el enemigo sea destruido más de una vez
+    // Variable opcional para propiedades del enemigo (ejemplo: vida)
+    public int health = 1;
 
-    void OnDestroy()
+    // Método para recibir daño (por si lo necesitas)
+    public void TakeDamage(int damage)
     {
-        if (isDestroyed) return;  // Si ya se ha destruido, no hace nada
-        isDestroyed = true;
-
-        // Llama al GameManager solo cuando realmente se destruye
-        GameManager gameManager = FindObjectOfType<GameManager>();
-        if (gameManager != null)
+        health -= damage;
+        if (health <= 0)
         {
-            gameManager.EnemyDestroyed();
+            Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        // Este método queda vacío porque el conteo se maneja en el script Bullet
     }
 }

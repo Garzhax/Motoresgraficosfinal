@@ -17,9 +17,9 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Destruye al enemigo solo una vez
-            Destroy(collision.gameObject);  // Destruye el enemigo
-            gameManager.EnemyDestroyed();  // Actualiza el conteo
+            // Actualiza el conteo y destruye el enemigo
+            gameManager.EnemyDestroyed();
+            Destroy(collision.gameObject);
         }
 
         // Destruye la bala

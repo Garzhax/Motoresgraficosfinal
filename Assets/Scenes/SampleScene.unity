@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81fd2be4e270024380508f325d4e740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalEnemies: 5
+  totalEnemies: 3
   enemiesRemainingText: {fileID: 2134278620}
   winCanvas: {fileID: 419181598}
 --- !u!1 &2056038102
