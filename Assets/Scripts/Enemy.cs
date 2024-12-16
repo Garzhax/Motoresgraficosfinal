@@ -3,21 +3,22 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player; // Referencia al jugador
-    private NavMeshAgent agent; // Componente NavMeshAgent
-    public GameObject explosionParticles; // Prefab de las partículas de explosión
+    public Transform player;
+    private NavMeshAgent agent;
+    private Animator animator;
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>(); // Obtiene el componente NavMeshAgent
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>(); // Obtén el componente Animator
     }
 
     private void Update()
     {
-        // Si el jugador está cerca, el enemigo lo sigue
         if (player != null)
         {
-            agent.SetDestination(player.position); // Hace que el enemigo persiga al jugador
+            agent.SetDestination(player.position);  // Enemigo persigue al jugador
+            animator.SetTrigger("Run");  // Mantén la animación de correr
         }
     }
 
@@ -25,10 +26,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            // Instancia las partículas de explosión en la posición del enemigo
-            Instantiate(explosionParticles, transform.position, Quaternion.identity);
-
-            Destroy(gameObject);  // Destruye el enemigo si es tocado por una bala
+            Destroy(gameObject);  // El enemigo se destruye al ser tocado por una bala
         }
     }
 }
