@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 20f;
+    public float speed = 40f;
     public Rigidbody rb;
 
     private GameManager gameManager;
@@ -27,21 +27,3 @@ public class Bullet : MonoBehaviour
     }
 }
 
-public class PlayerShooting : MonoBehaviour
-{
-    public GameObject bulletPrefab;  // Prefab de la bala
-    public Transform shootingPoint;  // Punto desde donde se dispara la bala
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) // Detecta clic izquierdo del mouse
-        {
-            Shoot();
-        }
-    }
-
-    void Shoot()
-    {
-        Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);  // Instancia la bala
-    }
-}
