@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 7a1799db6d7629446bbba31398d934be, type: 2}
+--- !u!95 &48654682 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1030530239069539501, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+  m_PrefabInstance: {fileID: 262029308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &157876112
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +261,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157876112}
   m_CullTransparentMesh: 1
+--- !u!95 &182592651 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1030530239069539501, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+  m_PrefabInstance: {fileID: 1006453320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &262029308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,9 +279,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8010923960163779728}
     - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 48654682}
+    - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1694710721}
+    - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 2372282460187413778, guid: 2657bfb3f600da748a29da3faebf849e, type: 3}
     - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: destructionEffect
       value: 
@@ -280,6 +298,10 @@ PrefabInstance:
       propertyPath: explosionParticles
       value: 
       objectReference: {fileID: 6308416629889544506, guid: 2657bfb3f600da748a29da3faebf849e, type: 3}
+    - target: {fileID: -3312955904578901236, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: m_Speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1030530239069539501, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1449,9 +1471,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8010923960163779728}
     - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 182592651}
+    - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 2372282460187413778, guid: 2657bfb3f600da748a29da3faebf849e, type: 3}
+    - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1694710721}
+    - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 2372282460187413778, guid: 2657bfb3f600da748a29da3faebf849e, type: 3}
     - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: destructionEffect
       value: 
@@ -1460,6 +1494,18 @@ PrefabInstance:
       propertyPath: explosionParticles
       value: 
       objectReference: {fileID: 6308416629889544506, guid: 2657bfb3f600da748a29da3faebf849e, type: 3}
+    - target: {fileID: -3312955904578901236, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: m_Speed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -3312955904578901236, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3312955904578901236, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1030530239069539501, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1709,9 +1755,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8010923960163779728}
     - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1749183289}
+    - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 2372282460187413778, guid: 2657bfb3f600da748a29da3faebf849e, type: 3}
+    - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1694710721}
+    - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 2372282460187413778, guid: 2657bfb3f600da748a29da3faebf849e, type: 3}
     - target: {fileID: -5382782685732111687, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: destructionEffect
       value: 
@@ -1720,6 +1778,10 @@ PrefabInstance:
       propertyPath: explosionParticles
       value: 
       objectReference: {fileID: 6308416629889544506, guid: 2657bfb3f600da748a29da3faebf849e, type: 3}
+    - target: {fileID: -3312955904578901236, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+      propertyPath: m_Speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1030530239069539501, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1825,6 +1887,11 @@ MonoBehaviour:
   totalEnemies: 3
   enemiesRemainingText: {fileID: 2134278620}
   winCanvas: {fileID: 419181598}
+--- !u!95 &1749183289 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1030530239069539501, guid: af4a5ec239048bb4d834723d4993005a, type: 3}
+  m_PrefabInstance: {fileID: 1671195574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2056038102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7973,7 +8040,7 @@ Transform:
   m_GameObject: {fileID: 7234844000824991274}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7066914, z: -0, w: 0.707522}
-  m_LocalPosition: {x: 2.522, y: 0, z: 1.569}
+  m_LocalPosition: {x: 19.73, y: 0, z: 1.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
