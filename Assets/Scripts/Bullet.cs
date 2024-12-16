@@ -26,3 +26,22 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+public class PlayerShooting : MonoBehaviour
+{
+    public GameObject bulletPrefab;  // Prefab de la bala
+    public Transform shootingPoint;  // Punto desde donde se dispara la bala
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) // Detecta clic izquierdo del mouse
+        {
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);  // Instancia la bala
+    }
+}
